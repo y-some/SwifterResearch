@@ -48,7 +48,7 @@ extension ViewController: WKNavigationDelegate {
             decisionHandler(.cancel)
             return
         }
-        if naviUrl.absoluteString.contains("hoge:") {
+        if naviUrl.scheme?.contains("hoge") ?? false {
             // URLスキームの場合：例えばAlertを表示してみる
             let alert = UIAlertController(title: "",
                                           message: "URLスキームのリンクがtapされました。",
